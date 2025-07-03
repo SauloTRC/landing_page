@@ -5,7 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
             'id': 1,
             'nome': 'OPEN NAÇÕES',
             'descricao': 'Lançamento que cabe no seu bolso',
-            'imagens': ['Slide1.JPG', 'Slide2.JPG', 'Slide3.JPG', 'Slide4.JPG', 'Slide5.JPG', 'Slide6.JPG', 'Slide7.JPG', 'Slide8.JPG', 'Slide9.JPG', 'Slide10.JPG', 'Slide11.JPG', 'Slide12.JPG', 'Slide13.JPG', 'Slide14.JPG', 'Slide15.JPG', 'Slide16.JPG', 'Slide17.JPG', 'Slide18.JPG', 'Slide19.JPG', 'Slide20.JPG', 'Slide21.JPG', 'Slide22.JPG', 'Slide23.JPG', 'preco_.jpg']
+            'imagens': ['Slide1.jpg', 'Slide2.jpg', 'Slide3.jpg',
+                'Slide4.jpg', 'Slide5.jpg', 'Slide6.jpg', 'Slide7.jpg',
+                'Slide8.jpg', 'Slide9.jpg', 'Slide10.jpg', 'Slide11.jpg',
+                'Slide12.jpg', 'Slide13.jpg', 'Slide14.jpg', 'Slide15.jpg',
+                'Slide16.jpg', 'Slide17.jpg', 'Slide18.jpg', 'Slide19.jpg',
+                'Slide20.jpg', 'Slide21.jpg', 'Slide22.jpg', 'Slide23.jpg',
+                'preco_.jpg']
         },
         {
             'id': 2,
