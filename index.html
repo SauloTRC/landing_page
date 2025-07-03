@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sua Morada - Imóveis na Planta</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
+</head>
+
+<body>
+    <header>
+        <img src="./image/logo1.png" alt="Logo Sua Morada" onerror="this.style.display='none'">
+    </header>
+
+    <main>
+        <div class="page-title">
+            <h1>Encontre o Apartamento dos Seus Sonhos</h1>
+        </div>
+        <h2>Nossos Imóveis</h2>
+
+        <div class="imoveis-grid" id="imoveis-grid-container"></div>
+    </main>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Interesse no <span id="modalImovelNome">Imóvel</span></h3>
+
+            <!-- FORMULÁRIO ATUALIZADO -->
+            <form action="https://formsubmit.co/saulo.carmo@icloud.com" method="POST">
+                <!-- Campo para onde o usuário será redirecionado após o envio -->
+                <input type="hidden" name="_next" value="https://SauloTRC.github.io/sua-morada/obrigado.html">
+                <!-- Desativa o Captcha (opcional, mas recomendado para começar) -->
+                <input type="hidden" name="_captcha" value="false">
+
+                <!-- Mantém o nome do imóvel no corpo do e-mail -->
+                <input type="hidden" id="imovel_nome_hidden" name="Imóvel de Interesse" value="">
+                <input type="hidden" id="imovel_id" name="imovel_id_interno" value="">
+                <!-- Não será enviado no e-mail -->
+
+                <input type="text" name="Nome" placeholder="Seu Nome Completo" required />
+                <input type="email" name="Email" placeholder="Seu Melhor E-mail" required />
+                <input type="tel" name="Telefone" placeholder="Seu Telefone (WhatsApp)" required />
+                <button type="submit">Enviar Contato</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Sua Morada. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
