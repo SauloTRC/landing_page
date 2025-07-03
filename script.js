@@ -1,30 +1,26 @@
-// Aguarda o conteúdo da página ser totalmente carregado para executar o script
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("O script.js foi carregado e iniciado.");
-
-    // 1. DADOS DOS IMÓVEIS (com nomes de imagem padronizados para minúsculas)
+    // 1. DADOS DOS IMÓVEIS (com nomes de ficheiro originais)
     const IMOVEIS = [
         {
             'id': 1,
             'nome': 'OPEN NAÇÕES',
             'descricao': 'Lançamento que cabe no seu bolso',
-            'imagens': ['slide1.jpg', 'slide2.jpg', 'slide3.jpg', 'slide4.jpg', 'slide5.jpg', 'slide6.jpg', 'slide7.jpg', 'slide8.jpg', 'slide9.jpg', 'slide10.jpg', 'slide11.jpg', 'slide12.jpg', 'slide13.jpg', 'slide14.jpg', 'slide15.jpg', 'slide16.jpg', 'slide17.jpg', 'slide18.jpg', 'slide19.jpg', 'slide20.jpg', 'slide21.jpg', 'slide22.jpg', 'slide23.jpg', 'preco_.jpg']
+            'imagens': ['Slide1.JPG', 'Slide2.JPG', 'Slide3.JPG', 'Slide4.JPG', 'Slide5.JPG', 'Slide6.JPG', 'Slide7.JPG', 'Slide8.JPG', 'Slide9.JPG', 'Slide10.JPG', 'Slide11.JPG', 'Slide12.JPG', 'Slide13.JPG', 'Slide14.JPG', 'Slide15.JPG', 'Slide16.JPG', 'Slide17.JPG', 'Slide18.JPG', 'Slide19.JPG', 'Slide20.JPG', 'Slide21.JPG', 'Slide22.JPG', 'Slide23.JPG', 'preco_.jpg']
         },
         {
             'id': 2,
             'nome': 'Senna Tower',
             'descricao': '3 quartos, 2 suítes, 110m²',
-            'imagens': ['']
+            'imagens': ['apto2_1.jpg', 'apto2_2.jpg', 'apto2_3.jpg']
         },
         {
             'id': 3,
             'nome': 'Skyline Tower',
             'descricao': 'Cobertura Duplex, 4 suítes, 250m²',
-            'imagens': ['']
+            'imagens': ['apto3_1.jpg', 'apto3_2.jpg', 'apto3_3.jpg']
         }
     ];
 
-    // 2. ELEMENTOS DO DOM
     const gridContainer = document.getElementById('imoveis-grid-container');
     const modal = document.getElementById("contactModal");
     const modalImovelNome = document.getElementById("modalImovelNome");
@@ -32,15 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const imovelNomeHiddenInput = document.getElementById("imovel_nome_hidden");
     const closeModalButton = document.querySelector(".modal .close");
 
-    if (!gridContainer || !modal) {
-        console.error("ERRO: Elementos essenciais (grid ou modal) não foram encontrados.");
-        return;
-    }
+    if (!gridContainer || !modal) { return; }
 
-    // 3. FUNÇÃO PARA RENDERIZAR OS CARDS DOS IMÓVEIS
     function renderImoveis() {
         gridContainer.innerHTML = '';
         IMOVEIS.forEach(imovel => {
+            // CAMINHO FINAL CORRIGIDO PARA 'image' (singular)
             const slidesHtml = imovel.imagens.map((imagem, index) => `
                 <div class="swiper-slide">
                   <a href="./image/${imagem}" data-fancybox="gallery-${imovel.id}" data-caption="${imovel.nome} - Foto ${index + 1}">
@@ -59,17 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
         initializePlugins();
     }
 
-    // 4. FUNÇÃO PARA INICIALIZAR PLUGINS
     function initializePlugins() {
         try {
             document.querySelectorAll(".imovel-swiper").forEach(el => new Swiper(el, { loop: true, navigation: { nextEl: el.querySelector(".swiper-button-next"), prevEl: el.querySelector(".swiper-button-prev") } }));
             Fancybox.bind("[data-fancybox]", {});
-        } catch (error) {
-            console.error("ERRO ao inicializar os plugins:", error);
-        }
+        } catch (error) { console.error("ERRO ao inicializar os plugins:", error); }
     }
 
-    // 5. LÓGICA DO MODAL (Simplificada para FormSubmit)
     function openModal(id, nome) {
         modalImovelNome.textContent = nome;
         imovelIdInput.value = id;
@@ -85,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // INICIALIZAÇÃO
     renderImoveis();
 });
 

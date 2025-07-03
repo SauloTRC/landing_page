@@ -14,6 +14,7 @@
 
 <body>
     <header>
+        <!-- CAMINHO FINAL CORRIGIDO PARA 'image' (singular) -->
         <img src="./image/logo1.png" alt="Logo Sua Morada" onerror="this.style.display='none'">
     </header>
 
@@ -31,17 +32,12 @@
             <span class="close">&times;</span>
             <h3>Interesse no <span id="modalImovelNome">Imóvel</span></h3>
 
-            <!-- FORMULÁRIO ATUALIZADO -->
-            <form action="https://formsubmit.co/saulo.carmo@icloud.com" method="POST">
-                <!-- Campo para onde o usuário será redirecionado após o envio -->
-                <input type="hidden" name="_next" value="https://SauloTRC.github.io/sua-morada/obrigado.html">
-                <!-- Desativa o Captcha (opcional, mas recomendado para começar) -->
+            <form action="https://formsubmit.co/SEU-EMAIL-AQUI" method="POST">
+                <input type="hidden" name="_next" value="https://saulotrc.github.io/landing_page/obrigado.html">
                 <input type="hidden" name="_captcha" value="false">
 
-                <!-- Mantém o nome do imóvel no corpo do e-mail -->
                 <input type="hidden" id="imovel_nome_hidden" name="Imóvel de Interesse" value="">
                 <input type="hidden" id="imovel_id" name="imovel_id_interno" value="">
-                <!-- Não será enviado no e-mail -->
 
                 <input type="text" name="Nome" placeholder="Seu Nome Completo" required />
                 <input type="email" name="Email" placeholder="Seu Melhor E-mail" required />
